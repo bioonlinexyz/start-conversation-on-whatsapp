@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Conversa no WhatsApp</title>
+</head>
+<body>
+    <div id="container" style="width: 100%">
+        <div class="fields">
+          <label for="phone" style="margin-left: 1px;margin-bottom: 8px;" title="Obrigatório">Número com DDD *</label><br>
+          <input style=" border-radius: 6px; width: 80%; padding: 8px; border: 1px solid " type="phone" id="phone" class="fields_link" required="" "="">
+          <p style="font-size: 12px;margin-left: 1px; height: 36px;">Exemplo: 44988776655</p>
+        </div>
+      
+        <div class="fields" id="buttons" style="margin-bottom: 20px;">
+          <button onclick="dataLayer.push({'event': 'whatsapp_sem_salvar'});" id="send" style="padding: 12px 24px 12px 24px; width: 80%; border-radius: 999px;background-color: #59C966; color: #ffffff; border-style: none;cursor: pointer;">&nbsp;&nbsp;Enviar mensagem&nbsp;&nbsp;</button>
+        </div>
+      </div>
+      
+      <script>
+        const phoneInput = document.querySelector('#phone');
+        const sendButton = document.querySelector('#send');
+      
+        function createLink() {
+          const phone = phoneInput.value;
+          const linkCreated = `https://wa.me/55${phone}`;
+          window.open(linkCreated, '_blank');
+        }
+      
+        send.addEventListener('click', createLink);
+      </script>
+    </div>
+</body>
+</html>
